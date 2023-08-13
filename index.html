@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design de interfaces</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header,
+        main {
+            margin: 10px;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .lista_discos {
+            list-style-type: disc;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-weight: bold;
+        }
+
+        td,
+        th {
+            width: 100px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        .images {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .small-cats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .happy-cat>img {
+            height: 50px;
+            width: auto;
+        }
+
+        .happy-cat>figcaption {
+            color: red;
+            animation: rainbow 1000ms linear 0ms infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        .animate1>img {
+            transform: rotateX(180deg);
+        }
+
+        .animate3>img {
+            transform: rotateX(180deg) rotateY(180deg);
+        }
+
+        .animate4>img {
+            transform: rotateY(180deg);
+        }
+
+        .main-cat {
+            height: 250px;
+        }
+
+        .form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label:not(:first-child) {
+            margin-top: 20px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 500px
+        }
+
+        .video {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        footer {
+            width: 100vw;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Trabalho de Design de interfaces</h1>
+        <p>
+            Esse é o <b>Trabalho de Design de Interfaces</b> de <i>Annie F.</i>
+        </p>
+    </header>
+    <nav>
+        <ul>
+            <li>Menu</li>
+            <li>Principal</li>
+            <li>Produtos</li>
+            <li>Serviços</li>
+            <li>Sobre</li>
+        </ul>
+    </nav>
+    <main>
+        <ol>
+            <li>
+                Frutas
+                <div>
+                    <ul class="lista_discos">
+                        <li>Banana</li>
+                        <li>Maça</li>
+                        <li>Abacate</li>
+                    </ul>
+                    </div>
+                </li>
+                <li>
+                    Legumes
+                    <div>
+                        <ul class="lista_discos">
+                            <li>Cebola</li>
+                            <li>Pimentão</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    Cerais
+                    <div>
+                    <ul class="lista_discos">
+                        <li>Arroz</li>
+                        <li>feijão</li>
+                    </ul>
+                </div>
+                </li>
+        </ol>
+
+        <table>
+            <caption>Lucro por mês</caption>
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th colspan="2">Frutas</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Banana</th>
+                    <th>Maça</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Janeiro</td>
+                    <td>100</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Fevereiro</td>
+                    <td>120</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Março</td>
+                    <td>120</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>340</td>
+                    <td>300</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="images">
+            <div class="small-cats">
+                <figure class="happy-cat animate1">
+                    <img alt='happy cat' src="./img/cato.jpg">
+                    <figcaption>Happy cat</figcaption>
+                </figure>
+                <figure class="happy-cat animate2">
+                    <img alt='happy cat' src="./img/cato.jpg">
+                    <figcaption>Happy cat</figcaption>
+                </figure>
+            </div>
+            <div class="big-cat">
+                <a href="https://ifrs.edu.br">
+                    <img alt='cat on a computer' src="./img/gat.png" class="main-cat">
+                </a>
+            </div>
+            <div class="small-cats">
+                <figure class="happy-cat animate3">
+                    <img alt='happy cat' src="./img/cato.jpg">
+                    <figcaption>Happy cat</figcaption>
+                </figure>
+                <figure class="happy-cat animate4">
+                    <img alt='happy cat' src="./img/cato.jpg">
+                    <figcaption>Happy cat</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="form">
+            <form method="POST" action="nonexistent.file">
+                <fieldset>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem"></textarea>
+
+                    <label for="opcao">Opção:</label>
+                    <select id="opcao" name="opcao">
+                        <option value="opcao1">Opção 1</option>
+                        <option value="opcao2">Opção 2</option>
+                        <option value="opcao3">Opção 3</option>
+                    </select>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class='video'>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JS2vGvm_OVA"></iframe>
+        </div>
+    </main>
+    <footer>
+        Endereço da Empresa: Rua Exemplo, 123 - Cidade, Estado - CEP: 12345-678
+    </footer>
+</body>
+
+</html>
